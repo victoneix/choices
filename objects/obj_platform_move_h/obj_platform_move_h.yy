@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_platform_move_w",
+  "name": "obj_platform_move_h",
   "spriteId": {
     "name": "spr_platform_move",
     "path": "sprites/spr_platform_move/spr_platform_move.yy",
@@ -30,11 +30,10 @@
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,},
   ],
   "properties": [
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"x_min","varType":1,"value":"0","rangeEnabled":true,"rangeMin":-320.0,"rangeMax":320.0,"listItems":[],"multiselect":false,"filters":[],},
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"x_max","varType":1,"value":"320","rangeEnabled":true,"rangeMin":-320.0,"rangeMax":320.0,"listItems":[],"multiselect":false,"filters":[],},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"y_min","varType":1,"value":"0","rangeEnabled":true,"rangeMin":-240.0,"rangeMax":240.0,"listItems":[],"multiselect":false,"filters":[],},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"y_max","varType":1,"value":"320","rangeEnabled":true,"rangeMin":-240.0,"rangeMax":240.0,"listItems":[],"multiselect":false,"filters":[],},
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"move_dir","varType":1,"value":"0","rangeEnabled":true,"rangeMin":-1.0,"rangeMax":1.0,"listItems":[],"multiselect":false,"filters":[],},
   ],
   "overriddenProperties": [],

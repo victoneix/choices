@@ -1,0 +1,1 @@
+id_platform = 0;
