@@ -1,46 +1,45 @@
-spd = 2;
-hspd = 0;
-vspd = 0;
-grav = 0.3;
+// Inherit the parent event
+event_inherited();
+
+move_dir = 0;
+move_spd = 0;
+move_spd_max = 3;
+acc = .3;
+dcc = .3;
 
 moving = function(){
-	//	Variaveis que guardão minhas teclas
-	var _right	= keyboard_check(ord("D")) || keyboard_check(vk_right);
-	var _left	= keyboard_check(ord("A")) || keyboard_check(vk_left);
-	var _jump	= keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up);
-	var _move = (_right - _left)*spd;
+	var _left	= keyboard_check(ord("A"));
+	var _right	= keyboard_check(ord("D"));
+	var _jump	= keyboard_check_pressed(ord("W")); 
+	var _move	= _right - _left != 0;
 	
-	vspd+=grav;						//	Adicionando velocidade da minha gravidade
-	hspd = _move;					//	Velocidade da minha direção
-	vspd = clamp(vspd, -8, 8);		//	Limitando a minha velocidade vertical
-
-	// Se eu estiver colidindo com o objeto colisão
-	//	E se eu precionar minha tecla de pulo
-	if(_jump && place_meeting(x,y+1,obj_collision)){
-		vspd-=6;					//	Eu posso pular
+	vspd += grav;
+	vspd = clamp(vspd, vspd_min, vspd_max);
+	
+	if(_move){
+		move_dir = point_direction(0, 0, _right - _left, 0);
+		move_spd = approach(move_spd, move_spd_max, acc);
+	} else{
+		move_spd = approach(move_spd, 0, dcc);
 	}
-
+	move_spd = clamp(move_spd, -8, 8);
+	hspd = lengthdir_x(move_spd, move_dir);
+	
+	
+	if(_jump && place_meeting(x,y+1,obj_collision)){
+		vspd -= 7;
+	}
 }
 
-collision = function(){
-	
-	//	Checando se eu colidir no meu x no objeto colisão
-	repeat(abs(hspd)){
-		if(place_meeting(x+sign(hspd), y, obj_collision)){
-			hspd = 0;
-			break;
-		} else{
-			x+=sign(hspd);
-		}
+approach = function(val1 = 0, val2 = 0, amount = 0){
+	if(val1 < val2){
+		val1 += amount
+		if(val1 > val2)
+			return val2;
+	} else{
+		val1 -= amount
+		if(val1 < val2)
+			return val2;
 	}
-	
-	//	Checando se eu colidir no meu y no objeto colisão
-	repeat(abs(vspd)){
-		if(place_meeting(x, y+sign(vspd), obj_collision)){
-			vspd = 0;
-			break;
-		} else{
-			y+=sign(vspd);
-		}
-	}
+	return val1;
 }

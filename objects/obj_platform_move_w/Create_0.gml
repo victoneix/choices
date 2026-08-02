@@ -8,15 +8,23 @@ platform_move_w = function(){
 
 	hspd = move_dir * move_spd;
 	
-	if(place_meeting(x+sign(hspd), y, obj_collision) || x <= x_min || x >= x_max){
+	if(place_meeting(x+sign(hspd), y, obj_collision)){
 		hspd = 0;
-		move = false;
 	}
 
-	var _coll = place_meeting(x+sign(hspd), y, obj_player) || place_meeting(x, y-1, obj_player);
+	var _cplayer = place_meeting(x+sign(hspd), y, obj_player) || place_meeting(x, y-1, obj_player);
+	var _cenemy = place_meeting(x+sign(hspd), y, obj_enemy) || place_meeting(x, y-1, obj_enemy);
 
-	if(_coll){
+	if(_cplayer){
 		with(obj_player){
+			if(!place_meeting(x+other.hspd, y, obj_collision)){
+				x+=other.hspd;
+			}
+		}
+	}
+	
+	if(_cenemy){
+		with(obj_enemy){
 			if(!place_meeting(x+other.hspd, y, obj_collision)){
 				x+=other.hspd;
 			}
@@ -25,4 +33,8 @@ platform_move_w = function(){
 
 	x+=hspd;
 	x=clamp(x, x_min, x_max);
+	if(x <= x_min || x >= x_max){
+		vspd = 0;
+		move = false;
+	}
 }

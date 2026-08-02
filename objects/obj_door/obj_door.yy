@@ -1,10 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_player",
+  "name": "obj_door",
   "spriteId": {
-    "name": "spr_player",
-    "path": "sprites/spr_player/spr_player.yy",
+    "name": "spr_wall",
+    "path": "sprites/spr_wall/spr_wall.yy",
   },
   "solid": false,
   "visible": true,
@@ -12,8 +12,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_entities_parent",
-    "path": "objects/obj_entities_parent/obj_entities_parent.yy",
+    "name": "obj_collision",
+    "path": "objects/obj_collision/obj_collision.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
