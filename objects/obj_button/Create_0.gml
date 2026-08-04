@@ -3,6 +3,7 @@ id_platform = 0;
 pressed = function(){
 	if(place_meeting(x,y,obj_entities_parent) && image_index == 0){
 		image_index = 1;
+		audio_play_sound(snd_button, 0, 0);
 		with(obj_platform_move_w){
 			if(id_platform == other.id_platform) move = true;
 		}
