@@ -3,6 +3,5 @@ if(state == "free"){
 } else if(state == "dead"){
 	dead();
 }
-
-show_debug_message(respawn);
 if(keyboard_check_pressed(ord("R"))) room_restart();
+if(keyboard_check_pressed(vk_escape)) room_goto(rm_level);

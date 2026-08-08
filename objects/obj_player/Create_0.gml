@@ -85,7 +85,7 @@ moving = function(){
 		state = "dead";
 	}
 	
-	var _cspike = instance_place(x,y,obj_spike);
+	var _cspike = instance_place(x+sign(hspd),y,obj_spike) || instance_place(x,y+sign(vspd),obj_spike);
 	if(_cspike){
 		state = "dead";
 	}

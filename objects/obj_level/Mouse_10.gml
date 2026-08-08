@@ -1,0 +1,4 @@
+if(global.level[maps]){
+	image_xscale = 0.5;
+	image_yscale = 3;
+}

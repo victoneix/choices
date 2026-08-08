@@ -34,8 +34,8 @@
   ],
   "properties": [
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"x_min","varType":1,"value":"0","rangeEnabled":true,"rangeMin":-320.0,"rangeMax":320.0,"listItems":[],"multiselect":false,"filters":[],},
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"x_max","varType":1,"value":"320","rangeEnabled":true,"rangeMin":-320.0,"rangeMax":320.0,"listItems":[],"multiselect":false,"filters":[],},
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"move_dir","varType":1,"value":"0","rangeEnabled":true,"rangeMin":-1.0,"rangeMax":1.0,"listItems":[],"multiselect":false,"filters":[],},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"x_max","varType":1,"value":"320","rangeEnabled":true,"rangeMin":-320.0,"rangeMax":640.0,"listItems":[],"multiselect":false,"filters":[],},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"move_dir","varType":1,"value":"0","rangeEnabled":true,"rangeMin":-2.0,"rangeMax":2.0,"listItems":[],"multiselect":false,"filters":[],},
   ],
   "overriddenProperties": [],
   "parent": {

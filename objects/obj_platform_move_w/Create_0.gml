@@ -7,10 +7,6 @@ platform_move_w = function(){
 	if(!move) return;
 
 	hspd = move_dir * move_spd;
-	
-	if(place_meeting(x+sign(hspd), y, obj_collision)){
-		hspd = 0;
-	}
 
 	var _cplayer = place_meeting(x+sign(hspd), y, obj_player) || place_meeting(x, y-1, obj_player);
 	var _cenemy = place_meeting(x+sign(hspd), y, obj_enemy) || place_meeting(x, y-1, obj_enemy);

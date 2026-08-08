@@ -20,6 +20,14 @@ walk = function(){
 		move_dir*=-1;
 	}
 	
+	if(place_p){
+		if(obj_platform_move_w.move && place_meeting(x,y+1,obj_platform_move_w)){
+			hspd = 0;
+			image_speed = 0;
+			image_index = 0;
+		} 
+	}
+	
 	//if(!position_meeting(x + (8 * move_dir), y+1, obj_collision)){
 	//	move_dir*=-1;
 	//}
